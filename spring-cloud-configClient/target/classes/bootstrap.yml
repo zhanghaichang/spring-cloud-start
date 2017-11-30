@@ -1,5 +1,0 @@
-server.port: 8011
-spring.application.name=config-Server
-spring.cloud.config.profile: sit
-spring.cloud.config.label: master
-spring.cloud.config.uri: http://localhost:8080/
