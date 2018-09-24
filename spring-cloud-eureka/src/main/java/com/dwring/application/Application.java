@@ -1,4 +1,4 @@
-package com.qf.application;
+package com.dwring.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
