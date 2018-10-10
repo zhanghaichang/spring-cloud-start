@@ -1,7 +1,151 @@
 # spring-cloud
 
 
-## Eureka参数配置如下
+## 一、erueka 客户端配置
 
 
-<table tablesorter="" tablesorter-default="" stickytableheaders"="" style="border-collapse: collapse; margin: 0px; overflow-x: auto; padding: 0px;"><thead style="position: static; margin-top: 0px; left: 305px; z-index: 3; width: 1313px; top: 0px;"><tr><th confluenceth="" sortableheader"="" data-column="0" tabindex="0" unselectable="on" style="border: 1px solid #dddddd; padding: 7px 15px 7px 10px; vertical-align: top; text-align: left; background: right center no-repeat #f0f0f0; color: #333333; cursor: pointer; user-select: none; min-width: 0px; max-width: none;"><div style="margin: 0px; padding: 0px;">&nbsp;</div></th><th sortableheader"="" data-column="1" tabindex="0" unselectable="on" style="border: 1px solid #dddddd; padding: 7px 15px 7px 10px; vertical-align: top; text-align: left; background: right center no-repeat #f0f0f0; color: #333333; cursor: pointer; user-select: none; min-width: 0px; max-width: none;"><div style="margin: 0px; padding: 0px;">Name</div></th><th sortableheader"="" data-column="2" tabindex="0" unselectable="on" style="border: 1px solid #dddddd; padding: 7px 15px 7px 10px; vertical-align: top; text-align: left; background: right center no-repeat #f0f0f0; color: #333333; cursor: pointer; user-select: none; min-width: 0px; max-width: none;"><div style="margin: 0px; padding: 0px;">Default</div></th><th sortableheader"="" data-column="3" tabindex="0" unselectable="on" style="border: 1px solid #dddddd; padding: 7px 15px 7px 10px; vertical-align: top; text-align: left; background: right center no-repeat #f0f0f0; color: #333333; cursor: pointer; user-select: none; min-width: 0px; max-width: none;"><div style="margin: 0px; padding: 0px;">Description</div></th></tr></thead><tbody><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">1</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.client.enabled</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">true</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;"><p style="margin: 0px; padding: 0px;"><span style="color: #252525;">表明尤里卡客户端启用</span></p></td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">2</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.client.eureka-connection-idle-timeout-seconds</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">30</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;"><p style="margin: 0px; padding: 0px;"><span style="color: #252525;">显示HTTP连接尤里卡服务器处于闲置状态多少时间(以秒为单位)才可以关闭。　　 　　</span></p><p style="margin: 10px 0px 0px; padding: 0px;"><span style="color: #252525;">在AWS环境中,建议值是30秒或更少,因为在不稳定状态防火墙清除连接信息几分钟后断开连接</span></p></td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">3</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.client.eureka-server-connect-timeout-seconds</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">5</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;"><p style="margin: 0px; padding: 0px;"><span style="color: #252525;">表示要等多长时间(以秒为单位)之前到尤里卡的连接服务器超时。</span></p><p style="margin: 10px 0px 0px; padding: 0px;"><span style="color: #252525;">注意,连接在客户端被org.apache.http.client汇集。HttpClient和创造这个设置会影响实际的连接以及等待时间从池中获取连接。</span></p></td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">4</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.client.register-with-eureka</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">true</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;"><p style="margin: 0px; padding: 0px;"><span style="color: #252525;">表明该实例能否被注册到尤里卡服务的其他客户端发现。</span></p><p style="margin: 10px 0px 0px; padding: 0px;"><span style="color: #252525;">在某些情况下,您不希望您的实例被发现而你想发现其他实例。</span></p></td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">5</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.client.fetch-registry</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">true</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;"><p style="margin: 0px; padding: 0px;"><span style="color: #252525;">表明这个客户能否应该从尤里卡服务端获取尤里卡注册表信息</span></p></td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">6</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.client.g-zip-content</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">true</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;"><p style="margin: 0px; padding: 0px;"><span style="color: #252525;">显示只要是支持的服务从</span><span style="color: #252525;">尤里卡</span><span style="color: #252525;">服务端获取的</span><span style="color: #252525;">内容</span><span style="color: #252525;">是否被压缩。</span></p><p style="margin: 10px 0px 0px; padding: 0px;"><span style="color: #252525;">表明从尤里卡服务端获取的信息是压缩过的用来优化网络流量。</span></p></td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">7</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.client.heartbeat-executor-thread-pool-size</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">2</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">心跳执行器的线程池初始值。</td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">8</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.client.initial-instance-info-replication-interval-seconds</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">40</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;"><span style="color: #252525;">表明最初多长时间(以秒为单位)复制实例信息到尤里卡服务。</span></td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">9</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.client.instance-info-replication-interval-seconds</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">30</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;"><span style="color: #252525;">表明多长时间(以秒为单位)复制实例更改到尤里卡服务。</span></td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">10</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.client.registry-fetch-interval-seconds</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">30</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;"><span style="color: #252525;">表明多长时间(以秒为单位)从尤里卡服务获取注册表信息。</span></td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">11</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.client.serviceUrl.defaultZone</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">&nbsp;</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;"><span style="color: #252525;">尤里卡客户端和服务端通信的地址，多个地址用逗号隔开，e.g. http://localhost:8761/eureka/</span></td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">12</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.dashboard.enabled</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">true</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">表明是否启用尤里卡服务控制台，默认为启用</td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">13</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.dashboard.path</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">/</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">尤里卡服务控制台的相对路径，默认为“/”</td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">14</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.instance.health-check-url</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">&nbsp;</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">尤里卡实例健康检查绝对路径URL</td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">15</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.instance.home-page-url</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">&nbsp;</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">尤里卡实例home页面绝对路径URL</td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">16</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.instance.hostname</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">&nbsp;</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">尤里卡实例主机名；如果不配置，尤里卡会直接使用操作系统的主机名</td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">17</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.instance.lease-expiration-duration-in-seconds</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">90</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;"><p style="margin: 0px; padding: 0px;"><span style="color: #252525;">表明尤里卡服务等待的时间间隔,以秒为单位自收到最后的心跳才能把这个实例从它的视图中删除。</span></p><p style="margin: 10px 0px 0px; padding: 0px;"><span style="color: #252525;">这个值被设置为至少高于leaseRenewalIntervalInSeconds中指定的值。</span></p></td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">18</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.instance.lease-renewal-interval-in-seconds</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">30</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;"><p style="margin: 0px; padding: 0px;">表明尤里卡客户端间隔多长时间（以秒为单位）向尤里卡服务发送心跳信息用来证明客户端是活着的；</p><p style="margin: 10px 0px 0px; padding: 0px;">在leaseExpirationDurationInSeconds参数的指定值期间没有收到来自客户端的心跳，这个实力会被尤里卡服务删除</p></td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">19</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.instance.namespace</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">通过配置文件找到namespace，忽略springcloud的配置</td></tr><tr><td confluencetd"="" colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top; user-select: none; cursor: default;">20</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">eureka.instance.status-page-url</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">&nbsp;</td><td colspan="1" style="border-style: solid; border-color: #dddddd; padding: 7px 10px; vertical-align: top;">尤里卡实例状态页面绝对路径URL</td></tr></tbody></table>
+1、Eureka 启禁用
+
+eureka.client.enabled=true
+
+2、Eureka 连接超时时间
+
+eureka.client.eureka-server-connect-timeout-seconds=5
+
+eureka.client.eureka-connection-idle-timeout-seconds=30
+
+3、Eureka Server等待超时时间
+
+eureka.client.eureka-server-read-timeout-seconds=8
+
+4、拉取Eureka注册信息
+
+eureka.client.fetch-registry=true
+
+5、注册自身到Eureka
+
+eureka.client.register-with-eureka=true
+
+6、过滤状态存活的实例
+
+eureka.client.filter-only-up-instances=true
+
+7、注册实例的名称
+
+eureka.instance.appname=unknown
+
+8、健康检查相对路径
+
+eureka.instance.health-check-url-path=/health
+
+9、HOME页面相对路径
+
+eureka.instance.home-page-url-path=/
+
+10、服务续约到期时间
+
+eureka.instance.lease-expiration-duration-in-seconds=90
+
+11、服务续约间隔时间
+
+eureka.instance.lease-renewal-interval-in-seconds=30
+
+12、注册元数据
+eureka.instance.metadata-map=
+
+13、通过配置文件找到namespace，忽略springcloud的配置
+
+eureka.instance.namespace=
+
+14、注册是否显示IP地址（第一个非回环地址）
+
+eureka.instance.prefer-ip-address=false
+
+15、注册时使用的IP地址
+
+eureka.instance.ip-address=
+
+16、压缩Eureka Server的数据
+
+eureka.client.g-zip-content=true
+
+17、心跳执行器的线程池初始值
+
+eureka.client.heartbeat-executor-thread-pool-size=2
+
+18、最初复制实例信息到Eureka服务器所需的时间
+
+eureka.client.initial-instance-info-replication-interval-seconds=40
+
+19、同步实例变更信息到Eureka服务到周期
+
+eureka.client.instance-info-replication-interval-seconds=30
+
+20、从Eureka服务器拉取服务信息周期
+
+eureka.client.registry-fetch-interval-seconds=30
+
+21、Eureka Server地址
+
+eureka.client.serviceUrl.defaultZone=xxx,xxx,xxx
+
+## 二、eureka 服务端配置
+
+1、注册实例
+
+eureka.instance.registry.default-open-for-traffic-count=1
+
+eureka.instance.registry.expected-number-of-renews-per-min=1
+
+2、服务面板
+
+eureka.dashborad.enabled=true
+
+eureka.dashboard.path=/
+
+3、自我保护
+
+eureka.server.enable-self-preservation: true
+
+4、限流
+
+eureka.server.rate-limiter-enabled: false
+
+eureka.server.rate-limiter-throttle-standard-clients: false
+
+eureka.server.rate-limiter-burst-size: 10
+
+eureka.server.rate-limiter-full-fetch-average-rate: 100 
+
+eureka.server.rate-limiter-registry-fetch-average-rate: 500
+
+5、相应缓存
+
+eureka.server.response-cache-auto-expiration-in-seconds: 180
+eureka.server.response-cache-update-interval-ms: 30000
+
+eureka.server.use-read-only-response-cache: true
+
+6、安全校验
+
+#启用安全校验
+
+security.basic.enabled=true
+
+#授权用户名
+
+security.user.name=root
+
+#授权密码
+
+security.user.password=123456
+
+三、高可用配置
+
+1、节点数据同步
+
+eureka.server.batch-replication: false
+
+eureka.enable-replicated-request-compression: false
+
+
