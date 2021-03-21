@@ -9,3 +9,6 @@ eureka:
     fetch-registry: false
     serviceUrl:
       defaultZone: http://localhost:${server.port}/eureka/
+logging:
+  level:
+    org.springframework.cloud: debug

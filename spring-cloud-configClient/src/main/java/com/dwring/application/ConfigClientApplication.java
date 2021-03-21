@@ -1,4 +1,4 @@
-package com.qf.application;
+package com.dwring.application;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class Application {
+public class ConfigClientApplication {
 
 	@Value("${from}")
 	String bar;
@@ -19,7 +19,7 @@ public class Application {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(ConfigClientApplication.class, args);
 	}
 
 }
