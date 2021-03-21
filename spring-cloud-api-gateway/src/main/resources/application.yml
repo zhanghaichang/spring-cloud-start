@@ -1,0 +1,36 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: rewritepath_route
+          uri: https://www.baidu.com/
+          predicates: 
+          - Path=/baidu/**
+          filters:
+          - RewritePath=/baidu/(?<segment>.*), /$\{segment}
+          - RequestTime=false
+        - id: load-balanced-service
+          uri: lb://SERVICE-HI
+          predicates:
+          - Path=/robin/**
+          filters:
+          - StripPrefix=1
+  profiles: rewritepath_route
+
+#关闭eureka的服务注册与发现
+ribbon:
+  eureka:
+    enabled: false 
+
+##server1服务设置随机策略
+rewritepath_route:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRul
+load-balanced-service:
+  ribbon:
+    # 负载地址
+    listOfServers: http://localhost:8888, http://localhost:8888
+    # 负载轮询策略
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+    # 健康检查
+    NFLoadBalancerPingClassName: com.dwring.application.config.HealthCheck
