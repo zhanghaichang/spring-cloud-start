@@ -1,5 +1,49 @@
-server.port: 8000
-spring.application.name: api-gateway
-eureka.client.serviceUrl.defaultZone: http://localhost:8888/eureka/
-zuul.routes.api-a.path: /api-a/**
-zuul.routes.api-a.serviceId: service-A
+server:
+  port: 8000
+spring:
+  application:
+    name: api-gateway
+  profiles:
+    active: rewritepath_route
+  cloud:
+    gateway:
+      enabled: true
+      httpclient:
+        response-timeout: 240000ms
+        connect-timeout: 10000
+      # 跨域配置
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+#服务注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
+  instance:
+    hostname: 127.0.0.1
+    prefer-ip-address: true
+    instance-id: ${eureka.instance.hostname}:${server.port}
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+
+# 暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
