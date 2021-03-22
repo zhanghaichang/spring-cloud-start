@@ -37,5 +37,7 @@
 		<module>spring-cloud-configServer</module>
 		<module>spring-cloud-hystrix</module>
 		<module>spring-cloud-fegin</module>
+		<module>spring-cloud-hystrix-dashboard</module>
+		<module>spring-cloud-sleuth</module>
 	</modules>
 </project>

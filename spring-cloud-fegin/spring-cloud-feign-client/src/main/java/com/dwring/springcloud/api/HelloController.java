@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  */
 @RestController
-public class HelloController implements HelloService {
+public class HelloController implements HelloFeignApi {
 
 	@Override
 	public String hello(@PathVariable("name") String name) {

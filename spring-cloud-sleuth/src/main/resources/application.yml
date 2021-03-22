@@ -1,13 +1,11 @@
 server:
-  port: 8001
+  port: 9411
+  compression:
+    # 是否开启压缩 默认false
+    enabled: true
 spring:
   application:
-    name: openfeign-consumer
-  zipkin:
-    base-url: http://localhost:9411
-  sleuth:
-    sampler:
-      probability: 1.0
+    name: zipkin-server
 #服务注册中心
 eureka:
   client:
@@ -17,6 +15,8 @@ eureka:
     hostname: 127.0.0.1
     prefer-ip-address: true
     instance-id: ${eureka.instance.hostname}:${server.port}
-logging:
-  level:
-    org.springframework.cloud.gateway: debug
+management: 
+   metrics: 
+      web: 
+         server: 
+            auto-time-requests: false

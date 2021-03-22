@@ -25,6 +25,12 @@ spring:
         locator:
           enabled: true
           lowerCaseServiceId: true
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1.0
+
 #服务注册中心
 eureka:
   client:

@@ -1,8 +1,13 @@
 server:
-  port: 8002
+  port: 8001
 spring:
   application:
     name: openfeign-client
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1.0
 #服务注册中心
 eureka:
   client:
@@ -12,6 +17,3 @@ eureka:
     hostname: 127.0.0.1
     prefer-ip-address: true
     instance-id: ${eureka.instance.hostname}:${server.port}
-logging:
-  level:
-    org.springframework.cloud.gateway: debug

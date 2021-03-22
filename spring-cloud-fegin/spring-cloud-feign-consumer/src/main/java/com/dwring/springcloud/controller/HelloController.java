@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import com.dwring.springcloud.api.HelloServiceClient;
+import com.dwring.springcloud.api.HelloFeignApi;
 
 /** 
  * @ClassName TestController
@@ -17,7 +17,7 @@ import com.dwring.springcloud.api.HelloServiceClient;
 public class HelloController {
 
 	@Autowired
-	private HelloServiceClient helloServiceClient;
+	private HelloFeignApi helloServiceClient;
 
 	@GetMapping("/test/{name}")
 	public String test(@PathVariable("name") String name) {
