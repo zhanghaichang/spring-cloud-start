@@ -1,3 +1,0 @@
-server.port: 8002
-spring.application.name: hystrix
-eureka.client.serviceUrl.defaultZone: http://localhost:8888/eureka/
