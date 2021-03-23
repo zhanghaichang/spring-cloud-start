@@ -28,6 +28,10 @@ ribbon:
 
 openfeign-client:
   ribbon:
+    #指的是建立连接所用的时间，适用于网络状况正常的情况下,两端连接所用的时间
+    ReadTimeout: 5000
+    #指的是建立连接后从服务器读取到可用资源所用的时间
+    ConnectTimeout: 5000
     # 负载地址
     #listOfServers: http://localhost:8001, http://localhost:8002
     # 负载轮询策略
