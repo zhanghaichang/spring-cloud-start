@@ -12,3 +12,14 @@ eureka:
 logging:
   level:
     org.springframework.cloud: debug
+
+
+# 暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8002
 spring:
   application:
     name: openfeign-consumer
@@ -20,3 +20,21 @@ eureka:
 logging:
   level:
     org.springframework.cloud.gateway: debug
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+
+# 暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

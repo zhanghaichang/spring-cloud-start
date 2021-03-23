@@ -1,5 +1,30 @@
-server.port: 8011
-spring.application.name=config-Server
-spring.cloud.config.profile: sit
-spring.cloud.config.label: master
-spring.cloud.config.uri: http://localhost:8080/
+server:
+  port: 8011
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      profile: sit
+      label: master
+      uri: http://localhost:8080/
+
+#服务注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
+  instance:
+    hostname: 127.0.0.1
+    prefer-ip-address: true
+    instance-id: ${eureka.instance.hostname}:${server.port}
+
+# 暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

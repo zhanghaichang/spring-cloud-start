@@ -20,11 +20,6 @@ management:
         allowed-origins: "*"
         allowed-methods: "*"
 
-turbine:
-  app-config: service-hi,service-lucy
-  aggregator:
-    clusterConfig: default
-  clusterNameExpression: new String("default")
-  combine-host: true
-  instanceUrlSuffix:
-    default: actuator/hystrix.stream
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "localhost"
