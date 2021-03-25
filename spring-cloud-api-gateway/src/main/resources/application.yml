@@ -2,24 +2,20 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: load-balanced-service
-          uri: lb://SERVICE-HI
-          predicates:
-          - Path=/robin/**
-          filters:
-          - StripPrefix=1
         - id: openfeign-client
           uri: lb://openfeign-client
           predicates:
           - Path=/openfeign-client/**
           filters:
           - StripPrefix=1
+          - RequestTime=false
         - id: openfeign-consumer
           uri: lb://openfeign-consumer
           predicates:
           - Path=/openfeign-consumer/**
           filters:
           - StripPrefix=1
+          - RequestTime=false
 
 #关闭eureka的服务注册与发现
 ribbon:
